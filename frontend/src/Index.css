@@ -1,0 +1,161 @@
+:root {
+  --blue: #51c2d5;
+  --white: #fff;
+  --dark: #000;
+  --silverWhite: #ccc;
+  --red: #ff4646;
+}
+
+* {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NAVBAR STYLE */
+.mynavbar {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--white);
+  box-shadow: 0px 4px 5px silver;
+}
+
+.right-side {
+  margin-top: 11px;
+  padding-right: 8px;
+}
+
+.brand-title {
+  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 3px;
+  padding-left: 7px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+/* BUTTONS STYLE */
+
+.button {
+  width: 120px;
+  height: 38px;
+  font-size: 16px;
+  margin-left: 6px;
+  margin-top: -5px;
+  border: none;
+}
+
+.login-button {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.register-button {
+  background-color: var(--white);
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  transition: 0.5s;
+}
+
+.register-button:hover {
+  background-color: var(--blue);
+  color: var(--white);
+  transition: 0.5s;
+}
+
+.logout-button {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+/* LOGIN BOX STYLE */
+
+.login-box {
+  width: 360px;
+  height: 450px;
+  background-color: var(--white);
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.15);
+  margin: 70px auto;
+}
+
+::placeholder {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.username {
+  width: 300px;
+  height: 45px;
+  border: 1px solid var(--silverWhite);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.password {
+  width: 300px;
+  height: 45px;
+  border: 1px solid var(--silverWhite);
+  margin-left: 30px;
+  margin-top: 35px;
+}
+
+.btn-login {
+  width: 250px;
+  height: 45px;
+  margin-top: 25px;
+  font-size: 1rem;
+  margin-left: 50px;
+  border: none;
+  border-radius: 4px;
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+/* Register BOX STYLE */
+
+.register-box {
+  width: 360px;
+  height: 450px;
+  background-color: var(--white);
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.15);
+  margin: 70px auto;
+  box-sizing: border-box;
+}
+.btn-register {
+  width: 250px;
+  height: 45px;
+  margin-top: 25px;
+  margin-left: 50px;
+  color: var(--blue);
+  font-size: 1rem;
+  border: 1px solid var(--blue);
+  border-radius: 4px;
+  background-color: var(--white);
+}
+
+.btn-register:hover {
+  background-color: var(--blue);
+  color: #fff;
+  transition: 0.5s;
+}
+
+.welcom-title {
+  margin-top: 100px;
+  font-size: 45px;
+  text-align: center;
+}
+
+/* remove link style decoration */
+.link {
+  text-decoration: none;
+}
+
+@media (max-width: 360px) {
+  .brand-title {
+    display: none;
+  }
+}
