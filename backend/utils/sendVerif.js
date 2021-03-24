@@ -9,7 +9,7 @@ const CLEINT_SECRET = 'gfwphS1zQLWuS6sgMnkCO6aT';
 const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
 const REFRESH_TOKEN = '1//04zV36HRZsIR-CgYIARAAGAQSNwF-L9IrOf3IRemxcmE0tAsXPHAH3fc1t1292r45pXBgiqWzsVlKQXxjWjEAXAYEusNHd_8mTXI';
 
-const oAuth2Client = new google.auth.OAuth2(
+let oAuth2Client = new google.auth.OAuth2(
   CLIENT_ID,
   CLEINT_SECRET,
   REDIRECT_URI
