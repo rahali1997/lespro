@@ -23,6 +23,7 @@ const oAuth2Client = new google.auth.OAuth2(
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
+            type: 'OAuth2',
             user: "ahmedrahali256@gmail.com",
             clientId: CLIENT_ID,
             clientSecret: CLEINT_SECRET,
