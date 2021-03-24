@@ -1,0 +1,45 @@
+.request {
+  width: 420px;
+  height: 700px;
+  background-color: #fff;
+  margin: 40px auto;
+  border: 1px solid #e4e5e7;
+  box-shadow: 0 0 1em #eee;
+}
+
+.input,
+.textarea {
+  display: block;
+  margin: 25px auto;
+  outline-color:#2094ad;
+}
+.select {
+  display: block;
+  margin: 15px auto;
+}
+.input,
+.select {
+  width: 300px;
+  height: 40px;
+}
+
+.textarea {
+  width: 300px;
+  height: 200px;
+}
+
+.service__button {
+  width: 200px;
+  height: 40px;
+  margin-left: 105px;
+}
+
+.service__label {
+  margin: 5px auto;
+}
+
+@media (max-width: 450px) {
+  .request {
+    margin-left: 15px;
+  }
+}

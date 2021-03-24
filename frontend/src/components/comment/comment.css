@@ -1,0 +1,8 @@
+.comment {
+  border-top: 2px solid #e4e5e7;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+  padding-left: 6px;
+}

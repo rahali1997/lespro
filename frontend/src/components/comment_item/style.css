@@ -1,0 +1,33 @@
+.commment-wrapper {
+  display: flex;
+  height: 80px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #e4e5e7;
+}
+.Comment__item-name {
+  font-weight: bold;
+  font-size: 14px;
+  padding-top: 7px;
+  padding-left: 4px;
+}
+
+.comment__box {
+    padding: 5px;
+    background-color: #2094ad;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 50px;
+}
+
+#delete__button{
+  width: 32px;
+  margin-left: auto;
+  
+}
+
+.comment__box > p {
+    font-size: 13px;
+    
+}

@@ -1,0 +1,28 @@
+.check {
+  width: 400px;
+  height: 120px;
+  margin: 120px auto;
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+  
+}
+
+.check__button {
+  width: 100px;
+}
+.check__input {
+  width: 170px;
+  height: 40px;
+}
+
+.check__img {
+  display: block;
+  margin: 50px auto;
+}
+
+@media (max-width: 420px) {
+  .check {
+    margin-left: 25px;
+  }
+}

@@ -1,15 +1,16 @@
 import express from 'express'
 import path from 'path'
 import ConnectDb from './config/db.js'
-import userRoute from './routes/userRoute.js'
+import ApiRoute from './routes/ApiRoute.js'
+import dotenv from 'dotenv'
 
 ConnectDb()
-
+dotenv.config()
 const app = express()
 
 app.use(express.json())
 
-app.use('/api/user', userRoute)
+app.use('/api/user', ApiRoute)
 const __dirname = path.resolve()
 
 if (process.env.NODE_ENV === 'production') {

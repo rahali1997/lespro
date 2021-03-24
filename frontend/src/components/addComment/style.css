@@ -1,0 +1,18 @@
+.comment-area{
+    display: flex;
+
+    
+}
+
+.comment-area > input {
+    flex: 1;
+}
+
+.comment-area > input {
+  outline-color: #2094ad;
+}
+
+
+ .IconButton  {
+   width: 50px;
+ }
