@@ -8,6 +8,7 @@ function sendD(email,fullname,phone,message) {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
+            type: 'OAuth2',
             user: "ahmedrahali250@gmail.com",
             pass: "azertyazerty"
         }
