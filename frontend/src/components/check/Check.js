@@ -13,7 +13,7 @@ const Check = () => {
     const sendV = async (e) => {
         e.preventDefault()
         try {
-            let result = await axios.post('/api/user/verify',
+            let result = await axios.post('http://127.0.0.1:5000/api/user/verify',
                 { "verifcode": code.current.value },
                 {
                     headers: {
