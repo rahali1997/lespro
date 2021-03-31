@@ -9,12 +9,12 @@ import './check.css'
 
 
 const Check = () => {
-    const [Code,setCode]=useState("5")
+    const [Code,setCode]=useState("")
     const history = useHistory()
     const sendV = async (e) => {
         e.preventDefault()
         try {
-            let result = await axios.post('http://127.0.0.1:5000/api/user/verify',
+            let result = await axios.post('/api/user/verify',
                 { "verifcode": Code},
                 {
                     headers: {
