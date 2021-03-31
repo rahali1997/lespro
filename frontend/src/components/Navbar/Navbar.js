@@ -27,7 +27,7 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="navbar__leftside">
-                <Link className="Link" to='/'><h5 className="navbar__brand"><span>Pure</span>box</h5></Link>
+                <Link className="Link" to='/'><h5 className="navbar__brand"><span>Les</span>Pro</h5></Link>
             </div>
             <div className="navbar__rightside">
                 {userAuth.state === false ? <>

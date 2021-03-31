@@ -43,8 +43,8 @@ const Landing = () => {
     return (<>
         <div className="home">
             <div className="home__body">
-                <h1 className="home__title">VOUS PREVOYEZ DES TRAVAUX CHEZ VOUS?</h1>
-                <p className="home__des">ProBuild VOUS MET EN RELATION AVEC LES PROFESSIONNELS DU BÂTIMENT</p>
+                <h1 className="home__title">VOUS PREVOYEZ DES TRAVAUX?</h1>
+                <p className="home__des">LesPro VOUS MET EN RELATION AVEC LES PROFESSIONNELS DU BÂTIMENT</p>
             </div>
             <div className="home__img">
                 <img src="./images/landing.PNG" />
@@ -68,7 +68,7 @@ const Landing = () => {
                     <option value="Manouba">Manouba</option>
                     <option value="sousse">Sousse</option>
                 </select>
-                <button onClick={() => filter()} id="btn__filter">filter</button>
+                <button onClick={() => filter()} id="btn__filter">Rechercher</button>
             </div>
             <div className="services-items">
 

@@ -1,6 +1,8 @@
 .check {
   width: 400px;
   height: 120px;
+  background-color: #fff;
+  padding-top: 18px;
   margin: 120px auto;
   display: flex;
   flex-direction: row;
@@ -8,12 +10,17 @@
   
 }
 
+#myalert {
+  margin-top: 20px;
+  width: 270px;
+}
+
 .check__button {
   width: 100px;
 }
 .check__input {
-  width: 170px;
-  height: 40px;
+  width: 180px;
+  height: 50px;
 }
 
 .check__img {

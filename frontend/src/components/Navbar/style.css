@@ -13,7 +13,9 @@ span {
 
 .navbar__leftside,
 .navbar__rightside {
-  padding: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+
 }
 .navbar__brand {
   margin-top: 0;

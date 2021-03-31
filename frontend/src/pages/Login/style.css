@@ -45,13 +45,13 @@ button {
   background-color: #1976d2;
 }
 
-.register-button {
+#register-button {
   background-color: #fff;
   border: 1px solid #1976d2;
   color: #1976d2;
 }
 
-.register-button:hover {
+#register-button:hover {
   background-color: #1976d2;
   color: #fff;
   transition: 0.5s;

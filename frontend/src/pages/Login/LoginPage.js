@@ -50,7 +50,7 @@ const LoginPage = () => {
                     <input ref={userEmail} className="login__input" type="email" placeholder="Email" required />
                     <input ref={userPass} className="login__input" type="password" placeholder="Mot de passe" required />
                     <button className="login__button">Login</button>
-                    <Link to='/register'><button className="register-button">Creer un compte</button></Link>
+                    <Link to='/register'><button id="register-button">Creer un compte</button></Link>
                 </form>
             </div>
         </>

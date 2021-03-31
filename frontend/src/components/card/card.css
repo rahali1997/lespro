@@ -1,5 +1,5 @@
 .card {
-  width: 490px;
+  width: 455px;
   height: 200px;
   background-color: #fff;
   margin: 10px auto;
@@ -8,6 +8,7 @@
   box-shadow: 0 0 1em #eee;
   display: flex;
   flex-direction: column;
+  /* border: 1px solid red; */
 }
 
 .card__title {
@@ -83,5 +84,13 @@
     width: 315px;
   }
 }
+
+@media (width: 768px) {
+  .card {
+    width: 420px;
+    margin-left: 25px;
+  }
+}
+
 
 

@@ -3,6 +3,7 @@ import Comment from '../../components/comment/Comment'
 import AddComment from '../../components/addComment/AddComment'
 import axios from 'axios'
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom'
 import './details.css'
 
@@ -43,7 +44,7 @@ const DetailsPage = ({ match }) => {
                          <p className="details__proName">{details.fullName}</p>
                         <Link  to={{pathname:'/contact',data:{name:details.email,spec:details.spec,proName:details.fullName}}} className="Link">
                             {result === false ? '' : result.isEmailVerified ? <button id="details__btn">Contacter</button> :
-                                <Link to="/check" className="Link"><button id="details__btnV">Verifier votre mail</button></Link>}
+                                <Link to="/check" className="Link"><button id="details__btnV" color="secondary">Verifier votre mail</button></Link>}
                         </Link>
                           <p className="card__spec-text">{details.spec}</p>
                     </div>

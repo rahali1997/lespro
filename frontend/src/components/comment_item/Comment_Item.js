@@ -9,7 +9,7 @@ import './style.css'
 
 const Comment_Item = ({ item }) => {
     const remove = async () => {
-        alert('voulez-vous vraiment supprimer ce commentaire ?')
+       if( window.confirm('voulez-vous vraiment supprimer ce commentaire ?')) {
         axios
             .post(`/api/user/remove`, { "commentID": item._id },
                 {
@@ -18,7 +18,7 @@ const Comment_Item = ({ item }) => {
                     }
                 })
             .then(res => console.log(res))
-            .catch(err => console.log(err))
+            .catch(err => console.log(err)) }
     }
 
     let d = {
