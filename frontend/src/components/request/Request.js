@@ -5,6 +5,7 @@ import { alertE, alertS } from '../../Alert'
 import axios from 'axios'
 import './request.css'
 
+
 const Request = () => {
     const PhoneRef = useRef()
     const FiscRef = useRef()
@@ -21,32 +22,44 @@ const Request = () => {
     }, [])
     const sendRequest = async (e) => {
         e.preventDefault()
-        try {
-            let result = await axios.post('/api/user/service/request',
-                {
-                    "phone": PhoneRef.current.value,
-                    "specialite": SpecRef.current.value,
-                    "region": RegionRef.current.value,
-                    "fiscale": FiscRef.current.value,
-                    "description": descRef.current.value,
-                    "spec":SpecRef.current.value
-                },
-                {
-                    headers: {
-                        'header-token': localStorage.token
-                    }
-                }
-            )
-            history.push('/')
-            alertS('Demande envoyée')
-
-        } catch (error) {
-            console.log(error.message)
-            alertE('erreur')
+        if (PhoneRef.current.value.length != 8)  {
+            alertE('Numero de telephone invalid')
         }
+        else {
+            if (FiscRef.current.value.length != 8) {
+                alertE('Matricule fiscale invalid')
+            } else {
 
 
+                try {
+                    let result = await axios.post('/api/user/service/request',
+                        {
+                            "phone": PhoneRef.current.value,
+                            "specialite": SpecRef.current.value,
+                            "region": RegionRef.current.value,
+                            "fiscale": FiscRef.current.value,
+                            "description": descRef.current.value,
+                            "spec": SpecRef.current.value
+                        },
+                        {
+                            headers: {
+                                'header-token': localStorage.token
+                            }
+                        }
+                    )
+                    history.push('/')
+                    alertS('Demande envoyée')
+
+                } catch (error) {
+                    console.log(error.message)
+                    alertE('erreur')
+                }
+
+
+            }
+        }
     }
+
     return (
         <div className="request">
             <form onSubmit={(e) => sendRequest(e)}>
@@ -76,3 +89,4 @@ const Request = () => {
 }
 
 export default Request
+

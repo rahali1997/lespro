@@ -24,6 +24,8 @@ const Check = () => {
             )
             alertS(result.data.message)
             history.push('/')
+            window.location.reload();
+
 
         } catch (error) {
             console.log(error)
@@ -42,7 +44,6 @@ const Check = () => {
 
             <form onSubmit={(e) => sendV(e)}>
                <TextField onChange={(e)=>setCode(e.target.value)}  value={Code} className="check__input" id="standard-basic" label="code de verification" required />
-                {/* <input className="check__input" type="text" placeholder="code de verification" required /> */}
                 <button className="check__button">Verifier</button>
             </form>
         </div>

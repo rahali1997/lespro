@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import MenuPro from '../MenuPro/MenuPro'
 import MenuUser from '../MenuUser/MenuUser'
 import AuthContext from '../../AuthContext'
+import axios from 'axios'
 import './style.css'
 
 const Navbar = () => {
@@ -20,9 +21,27 @@ const Navbar = () => {
 
         return "";
     }
+    function getName() {
+        if(userAuth.state) {
+            
+            let mytoken = localStorage.getItem('token')
+            if (mytoken !== "") {
+                let role = jwt_decode(mytoken)
+                return (role.user.fullName)
+            }
+        }
+        return "";
+    }
+   
+   
+    
     let role = getRole();
+    let username=getName();
 
 
+    
+   
+      
 
     return (
         <div className="navbar">
@@ -30,6 +49,8 @@ const Navbar = () => {
                 <Link className="Link" to='/'><h5 className="navbar__brand"><span>Les</span>Pro</h5></Link>
             </div>
             <div className="navbar__rightside">
+                {/* {status===false ?<Link to="/check" className="Link"><button id="details__btnVr" color="secondary">Verifier votre mail</button></Link>:''} */}
+                {username}
                 {userAuth.state === false ? <>
                     <Link to="/login"><button className="navbar__login">Login</button></Link>
                     <Link to="/register"><button className="navbar__register">S'inscrire</button></Link>

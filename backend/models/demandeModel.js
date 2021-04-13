@@ -18,7 +18,7 @@ const demandeSchema = mongoose.Schema({
 
     }
 
-})
+},{ timestamps: true })
 
 const Demande = mongoose.model('Demande', demandeSchema)
 

@@ -20,7 +20,9 @@ const login = async (req, res) => {
         const payload = {
             user: {
                 id: user.id,
-                role: user.role
+                role: user.role,
+                fullName:user.fullName,
+                isEmailVerified:user.isEmailVerified
             }
         }
         jwt.sign(payload, 'key', { expiresIn: '1h' }, (err, token) => {
@@ -38,7 +40,7 @@ const register = async (req, res) => {
     
 
     const { fullName, email, role, password } = req.body;
-    if(fullName ==="" || email==="" || password==="") {
+    if(fullName =="" || email=="" || password=="") {
         res.send('somthing went wrong !')
     } else {
          
@@ -47,7 +49,7 @@ const register = async (req, res) => {
             if (user) { return res.status(400).json({ message: 'Email exist déja' }) }
             let verifCode = String(Math.floor(Math.random(10) * 100000));
             const NewUser = new User({
-                fullName: fullName,
+                fullName:fullName,
                 email: email,
                 password: password,
                 role: role,
@@ -60,7 +62,9 @@ const register = async (req, res) => {
                 user: {
                     id: NewUser.id,
                     role: NewUser.role,
-                    verifCode: NewUser.verifCode
+                    verifCode: NewUser.verifCode,
+                    fullName,
+                   
                 }
             }
             jwt.sign(payload, 'key', { expiresIn: '1h' }, (err, token) => {

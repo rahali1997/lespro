@@ -55,6 +55,12 @@ span {
   height: 40px;
 }
 
+#details__btnVr{
+  width: 150px;
+  background-color: #fa1e0e;
+  margin-right: 20px;
+
+}
 @media (max-width: 450px) {
   .navbar__brand {
     font-size: 22px;

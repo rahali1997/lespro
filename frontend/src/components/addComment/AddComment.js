@@ -6,34 +6,35 @@ import './style.css'
 
 
 
-const AddComment = ({details}) => {
+const AddComment = ({ details }) => {
     const [comment, setComment] = useState('')
-   
+
 
     const sendComment = async (e) => {
         e.preventDefault()
-
-        try {
-            let result = await axios
-                .post("/api/user/add", { "comment":comment,"serviceId":details._id}, {
-                    headers: {
-                        "header-token": localStorage.token
-                    }
-                })
+        if (comment !== "") {
+            try {
+                let result = await axios
+                    .post("/api/user/add", { "comment": comment, "serviceId": details._id }, {
+                        headers: {
+                            "header-token": localStorage.token
+                        }
+                    })
                 setComment('')
-        } catch (err) {
-            console.log(err)
+            } catch (err) {
+                console.log(err)
+            }
         }
     }
     return (
         <div className="comment-area">
-           
-                <input onChange={e=>setComment(e.target.value)} value={comment} type="text" placeholder="Donner ton avis" />
-                <div className='iconbtn'>
-                    <form>
-                    <IconButton onClick={(e) => sendComment(e)} className="IconButton"><SendIcon className="sendIcon" /></IconButton>
-                    </form>
-                </div>
+
+            <input onChange={e => setComment(e.target.value)} value={comment} type="text" placeholder="Donner ton avis" required />
+            <div className='iconbtn'>
+                <form>
+                    <IconButton onClick={(e) => sendComment(e)} className="IconButton" required><SendIcon className="sendIcon" /></IconButton>
+                </form>
+            </div>
         </div>
     )
 }

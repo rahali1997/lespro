@@ -4,10 +4,11 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 // These id's and secrets should come from .env file.
-const CLIENT_ID = '743699180184-o48t41vscjld3asujqi8dqmqicu7lpsi.apps.googleusercontent.com';
-const CLEINT_SECRET = '9gG-_-2pIplmEHPfgCs41p0v';
+const CLIENT_ID = '854283613866-dt9ojgi74jcst1u91eqtgkqp72j39g7i.apps.googleusercontent.com';
+const CLEINT_SECRET = 'XYKA-v8rreuqBxEtU90PRe9n';
 const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
-const REFRESH_TOKEN = '1//04yHLGXotfyJqCgYIARAAGAQSNwF-L9IrD54yYTtbFvMSxYf6Ekhnli8kdnh4fILS1TKRcVxbvPS3ELrvkAcbX4eK93J18_7yHfw';
+const REFRESH_TOKEN = '1//04WfilIpgUOLLCgYIARAAGAQSNwF-L9IrRBoEOrKCPIPeDVLpYW41q4HRQrYvZe00xX3dwxCXAgXMRZ-UlhELnTWrDg6dOcGuDgw';
+
 
 const oAuth2Client = new google.auth.OAuth2(
     CLIENT_ID,
@@ -24,7 +25,7 @@ const oAuth2Client = new google.auth.OAuth2(
         service: 'gmail',
         auth: {
             type: 'OAuth2',
-            user: "ahmedrahali256@gmail.com",
+            user: "ahmedrahali250@gmail.com",
             clientId: CLIENT_ID,
             clientSecret: CLEINT_SECRET,
             refreshToken: REFRESH_TOKEN,
@@ -43,7 +44,7 @@ const oAuth2Client = new google.auth.OAuth2(
         if (!err) {
             console.log('email sended', err)
         } else {
-            console.log('email send failed')
+            console.log('email send failed',err)
         }
     })
 

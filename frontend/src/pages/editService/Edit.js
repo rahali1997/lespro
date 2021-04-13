@@ -18,6 +18,10 @@ const Edit = () => {
     },[])
     const UpdateService=async(e)=>{
         e.preventDefault()
+        if(phoneRef.current.value.length != 8) {
+            alertE('Numero de telephone invalid')
+        }
+       else {
         try {
             let result=await axios
         .post('/api/user/service/update',
@@ -32,7 +36,7 @@ const Edit = () => {
         }
         
 
-    }
+    } }
     return (
         <div className="edit">
             <form onSubmit={(e)=>UpdateService(e)}>

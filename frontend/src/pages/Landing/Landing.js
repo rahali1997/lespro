@@ -12,6 +12,7 @@ const Landing = () => {
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
+
         const getAllServices = async () => {
             setLoading(true)
             try {
@@ -40,10 +41,11 @@ const Landing = () => {
         getAllServices()
 
     }
+  
     return (<>
         <div className="home">
             <div className="home__body">
-                <h1 className="home__title">VOUS PREVOYEZ DES TRAVAUX?</h1>
+                <h1 className="home__title">VOUS AVEZ DES TRAVAUX?</h1>
                 <p className="home__des">LesPro VOUS MET EN RELATION AVEC LES PROFESSIONNELS DU BÂTIMENT</p>
             </div>
             <div className="home__img">
@@ -52,7 +54,7 @@ const Landing = () => {
         </div>
         <div className="services-wrapper">
             <div className="services-select">
-                <select  className="form-select" ref={specRef}
+                <select   className="form-select" ref={specRef}
                     defaultValue={'Tous'}>
                     <option value='Tous'>Tous</option>
                     <option value='Electricité'>Electricité</option>
@@ -61,7 +63,7 @@ const Landing = () => {
                     <option value="Climatisation">Climatisation</option>
                     <option value="Alarme">Alarme</option>
                 </select>
-                <select className="form-select" ref={regionRef}>
+                <select  className="form-select" ref={regionRef}>
                     <option defaultValue={'Tous'}>Tous</option>
                     <option value="Tunis">Tunis</option>
                     <option value="Ariana">Ariana</option>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { alertE, alertS } from '../../Alert'
 import { useHistory } from 'react-router-dom'
+import jwt_decode from "jwt-decode";
 import axios from 'axios'
 import './contact.css'
 
@@ -24,28 +25,35 @@ const Contact = (props) => {
 
   const sendDemande = async (e) => {
     e.preventDefault()
-    let email = props.location.data.name;
-    let fullName = props.location.data.proName;
-    let spec = props.location.data.spec;
-    try {
-      let result = await axios
-        .post('/api/user/service/send',
-          {
-            "phone": phoneR.current.value,
-            "description": desR.current.value,
-            "email": email,
-            "fullname": fullName,
-            "spec": spec
-          }, {
-          headers: {
-            'header-token': localStorage.token
-          }
-        })
-      alertS('Demande envoyée')
-      history.push('/')
-    } catch (err) {
-      console.log(err)
+    if (phoneR.current.value.length != 8) {
+      alertE('Numero de telephone invalid!')
+    } else {
+      let mytoken=jwt_decode(localStorage.token)
+      let email = props.location.data.name;
+      let fullName = mytoken.user.fullName;
+      let spec = props.location.data.spec;
+      try {
+        let result = await axios
+          .post('/api/user/service/send',
+            {
+              "phone": phoneR.current.value,
+              "description": desR.current.value,
+              "email": email,
+              "fullname": fullName,
+              "spec": spec
+            }, {
+            headers: {
+              'header-token': localStorage.token
+            }
+          })
+        alertS('Demande envoyée')
+        history.push('/')
+      } catch (err) {
+        console.log(err)
+      }
     }
+
+
   }
 
 
@@ -53,6 +61,7 @@ const Contact = (props) => {
   return (
     <div className="contact">
       <form onSubmit={(e) => sendDemande(e)}>
+        <label className="label__form">Votre Numero de Telephone:</label>
         <input ref={phoneR} onChange={e => setState({ phone: e.target.value })} value={state.phone} className="contact__number" type="number" placeholder="Numero de telephone" required />
         <textarea ref={desR} className="contact__input" type="text" placeholder="
  Quel est ton problème ?" required />
