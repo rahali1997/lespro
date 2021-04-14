@@ -30,7 +30,7 @@ const Contact = (props) => {
     } else {
       let mytoken=jwt_decode(localStorage.token)
       let email = props.location.data.name;
-      let fullName = mytoken.user.fullName;
+      let fullName = props.location.data.proName;
       let spec = props.location.data.spec;
       try {
         let result = await axios
@@ -39,7 +39,7 @@ const Contact = (props) => {
               "phone": phoneR.current.value,
               "description": desR.current.value,
               "email": email,
-              "fullname": fullName,
+              "fullname":fullName ,
               "spec": spec
             }, {
             headers: {
