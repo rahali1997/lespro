@@ -20,18 +20,13 @@ const oAuth2Client = new google.auth.OAuth2(
 
  async function sendVerif(email, verifNumber) {
      try {
-    const accessToken = await oAuth2Client.getAccessToken();
-    let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            type: 'OAuth2',
-            user: "ahmedrahali250@gmail.com",
-            clientId: CLIENT_ID,
-            clientSecret: CLEINT_SECRET,
-            refreshToken: REFRESH_TOKEN,
-            accessToken: accessToken,
-        }
-    })
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user:"ahmedrahali250@gmail.com",
+                pass:"azertyazerty"
+            }
+        })
 
     let mailOptions = {
         from: 'lesPro',

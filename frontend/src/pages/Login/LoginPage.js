@@ -1,4 +1,5 @@
 import CircularProgress from '@material-ui/core/CircularProgress';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import React, { useEffect, useContext, useRef, useState } from 'react'
 import TextField from '@material-ui/core/TextField';
 import { useHistory } from 'react-router-dom'
@@ -45,7 +46,7 @@ const LoginPage = () => {
     }
     return (
         <>
-            {loading && <center><CircularProgress /></center>}
+             {loading && <center><LinearProgress /></center>}
             <div className="login">
                 <form onSubmit={(event) => Login(event)}>
                     <input ref={userEmail} className="login__input" type="email" placeholder="Email" required />

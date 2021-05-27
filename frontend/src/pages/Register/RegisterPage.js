@@ -1,4 +1,5 @@
 import CircularProgress from '@material-ui/core/CircularProgress';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import React, { useEffect, useContext, useRef,useState } from 'react'
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom'
@@ -64,7 +65,7 @@ const RegisterPage = () => {
 
     return (
         <>  
-            {loading && <center><CircularProgress/></center>}
+            {loading && <center><LinearProgress /></center>}
             <div className="register">
                 <form onSubmit={(event) => register(event)}>
                     <input

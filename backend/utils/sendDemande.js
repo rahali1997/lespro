@@ -16,20 +16,15 @@ oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
 async function sendD(email, fullname, phone, message) {
     try {
-        const accessToken = await oAuth2Client.getAccessToken();
+
         let transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                type: 'OAuth2',
-                user: "ahmedrahali250@gmail.com",
-                clientId: CLIENT_ID,
-                clientSecret: CLEINT_SECRET,
-                refreshToken: REFRESH_TOKEN,
-                accessToken: accessToken,
-
+                user:"ahmedrahali250@gmail.com",
+                pass:"azertyazerty"
             }
         })
-
+        
         let mailOptions = {
             from: 'LesPro',
             to: email,
